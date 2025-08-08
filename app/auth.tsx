@@ -5,23 +5,23 @@ import { useAuth } from "@/lib/authAppWrite";
 import { Redirect } from "expo-router";
 
 const Authcreeen = () => {
-  const {session,signIn,signUp}  = useAuth();
+  const {session,signIn,signUp,error}  = useAuth();
   const [isSignUp, setIsSignUp] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("");
   const [name, setName] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const [error, setError] = useState<string | null>("");
+  const [localerror, setLocalError] = useState<string | null>("");
   const theme = useTheme();
   const handleAuth = () => {
     if (!email || !password) {
-      setError("Please fill in all fields");
+      setLocalError("Please fill in all fields");
       return;
     }
     if(password.length < 8){
-        setError("Passwords must be at least 6 characters long.")
+        setLocalError("Passwords must be at least 6 characters long.")
         return;
     }
-    setError(null);
+    setLocalError(null);
     if(isSignUp){signUp({email,password,name})}
     signIn({email,password});
   };
@@ -63,7 +63,9 @@ const Authcreeen = () => {
           mode="outlined"
           onChangeText={setPassword}
         />
+        {localerror && <Text style={{ color: theme.colors.error }}>{localerror}</Text>}
         {error && <Text style={{ color: theme.colors.error }}>{error}</Text>}
+
         <Button mode="contained" onPress={handleAuth}>
           {isSignUp ? "Sign Up" : "Sign In"}
         </Button>
