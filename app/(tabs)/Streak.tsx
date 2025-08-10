@@ -27,6 +27,16 @@ const Login = () => {
               borderRadius: 8,
               marginTop: 10,
               padding: 10,
+              gap: 10,
+
+              // Shadow for iOS
+              shadowColor: "#000",
+              shadowOffset: { width: 0, height: 2 },
+              shadowOpacity: 0.1,
+              shadowRadius: 4,
+
+              // Shadow for Android
+              elevation: 1,
             }}
           >
             <Text
@@ -45,15 +55,17 @@ const Login = () => {
               style={{
                 flexDirection: "row",
                 alignItems: "center",
-                backgroundColor: "#EAEAEA", // Streak container background
+                backgroundColor: "#ffd58096", // Streak container background
                 paddingVertical: 5,
-                paddingHorizontal: 10,
+                paddingHorizontal: 15,
                 gap: 10,
-                borderRadius: 15,
+                borderRadius: 6,
+                justifyContent: "center",
+                alignSelf:"flex-start"
               }}
             >
               <Text>{item.icon}</Text>
-              <Text>{item.streak}</Text>
+              <Text style={{ fontWeight: 600 }}>{item.streak}</Text>
             </View>
           </View>
         )}
