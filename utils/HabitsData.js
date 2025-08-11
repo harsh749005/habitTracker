@@ -2,7 +2,7 @@ export const HabitsData = [
   {
     id: 1,
     title: "Meditate",
-    description: "Spend at least 5–10 minutes in mindful meditation every morning to stay calm and focused.",
+    description: "Meditate 5–10 minutes each morning for focus.",
     frequency: "Daily",
     streak: 0,
     icon: "🔥",
@@ -12,7 +12,7 @@ export const HabitsData = [
   {
     id: 2,
     title: "Read",
-    description: "Read a minimum of 10 pages from a book or article to improve knowledge and focus.",
+    description: "Read 10+ pages to boost knowledge.",
     frequency: "Daily",
     streak: 3,
     icon: "🔥",
@@ -22,7 +22,7 @@ export const HabitsData = [
   {
     id: 3,
     title: "Workout",
-    description: "Do 30 minutes of physical exercise such as running, gym, or yoga to stay active.",
+    description: "Exercise 30 minutes to stay fit.",
     frequency: "Mon/Wed/Fri",
     streak: 5,
     icon: "🔥",
@@ -32,7 +32,7 @@ export const HabitsData = [
   {
     id: 4,
     title: "Drink Water",
-    description: "Drink at least 8 glasses of water throughout the day to stay hydrated and healthy.",
+    description: "Drink 8 glasses of water daily.",
     frequency: "Daily",
     streak: 7,
     icon: "🔥",
@@ -42,7 +42,7 @@ export const HabitsData = [
   {
     id: 5,
     title: "Journal Writing",
-    description: "Write 3–5 sentences about your day, thoughts, or gratitude to clear your mind.",
+    description: "Write 3–5 daily thoughts or notes.",
     frequency: "Daily",
     streak: 2,
     icon: "🔥",
@@ -52,7 +52,7 @@ export const HabitsData = [
   {
     id: 6,
     title: "Practice Coding",
-    description: "Spend at least 1 hour improving coding skills through practice or building projects.",
+    description: "Code for at least 1 hour daily.",
     frequency: "Daily",
     streak: 4,
     icon: "🔥",
@@ -62,7 +62,7 @@ export const HabitsData = [
   {
     id: 7,
     title: "Stretching",
-    description: "Perform 10–15 minutes of stretching to improve flexibility and prevent muscle tension.",
+    description: "Stretch for 10–15 minutes daily.",
     frequency: "Daily",
     streak: 6,
     icon: "🔥",
@@ -72,7 +72,7 @@ export const HabitsData = [
   {
     id: 8,
     title: "Wake Up Early",
-    description: "Wake up before 7 AM to start the day early and maximize productivity.",
+    description: "Wake before 7 AM for productivity.",
     frequency: "Daily",
     streak: 8,
     icon: "🔥",

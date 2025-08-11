@@ -1,20 +1,29 @@
-import { View, Text, FlatList, Dimensions } from "react-native";
+import { View, Text, FlatList, Dimensions, Image, StatusBar } from "react-native";
 import React from "react";
-import Quotes from "../../utils/Quotes";
 import { HabitsData } from "@/utils/HabitsData";
 import { Colors } from "@/utils/Colors";
+import LeaderBoard from "@/component/LeaderBoard";
 const Login = () => {
   const { width } = Dimensions.get("screen");
   return (
+    <>
     <View
       style={{
+        // paddingTop:40,
         flex: 1,
         backgroundColor: Colors.mainBg, // Screen background
+        // backgroundColor:"#fff",
         justifyContent: "center",
         alignItems: "center",
         padding: 10,
       }}
-    >
+      >
+{/* 
+        <View style={{justifyContent:"flex-start",paddingLeft:10,alignSelf:"flex-start"}}>
+        <Text style={{fontSize:20,fontWeight:700}}>Habit Streaks</Text>
+        </View> */}
+      <LeaderBoard/>
+
       <FlatList
         data={HabitsData}
         keyExtractor={(item, index) => index.toString()}
@@ -54,23 +63,106 @@ const Login = () => {
             <View
               style={{
                 flexDirection: "row",
+                justifyContent: "space-between",
                 alignItems: "center",
-                backgroundColor: "#ffd58096", // Streak container background
-                paddingVertical: 5,
-                paddingHorizontal: 15,
-                gap: 10,
-                borderRadius: 6,
-                justifyContent: "center",
-                alignSelf:"flex-start"
               }}
             >
-              <Text>{item.icon}</Text>
-              <Text style={{ fontWeight: 600 }}>{item.streak}</Text>
+              <View
+                style={{
+                  alignItems: "center",
+                  backgroundColor: "#ffe2a75b", // Streak container background
+                  paddingVertical: 5,
+                  paddingHorizontal: 15,
+                  gap: 2,
+                  borderRadius: 6,
+                  justifyContent: "center",
+                  alignSelf: "flex-start",
+                }}
+              >
+                <View
+                  style={{
+                    justifyContent: "center",
+                    alignSelf: "flex-start",
+                    flexDirection: "row",
+                    alignItems: "center",
+                    gap: 8,
+                  }}
+                >
+                  <Text>{item.icon}</Text>
+                  <Text style={{ fontWeight: 600, color: "#000000ff" }}>
+                    {item.streak}
+                  </Text>
+                </View>
+                <Text style={{fontSize:12, fontWeight: 600, color: "#25252594" }}>
+                  Current
+                </Text>
+              </View>
+              <View
+                style={{
+                  alignItems: "center",
+                  backgroundColor: "#ffe2a75b", // Streak container background
+                  paddingVertical: 5,
+                  paddingHorizontal: 15,
+                  gap: 2,
+                  borderRadius: 6,
+                  justifyContent: "center",
+                  alignSelf: "flex-start",
+                }}
+              >
+                <View
+                  style={{
+                    justifyContent: "center",
+                    alignSelf: "flex-start",
+                    flexDirection: "row",
+                    alignItems: "center",
+                    gap: 8,
+                  }}
+                >
+                  <Image
+                    source={require("../../assets/images/winner.png")}
+                    style={{ width: 20, height: 20 }}
+                  />
+                  <Text style={{ fontWeight: 600, color: "#00000094" }}>0</Text>
+                </View>
+                <Text style={{ fontSize:12,fontWeight: 600, color: "#25252594" }}>
+                  Best
+                </Text>
+              </View>
+              <View
+                style={{
+                  alignItems: "center",
+                  backgroundColor: "#ffe2a75b", // Streak container background
+                  paddingVertical: 5,
+                  paddingHorizontal: 15,
+                  gap: 2,
+                  borderRadius: 6,
+                  justifyContent: "center",
+                  alignSelf: "flex-start",
+                }}
+              >
+                <View
+                  style={{
+                    justifyContent: "center",
+                    alignSelf: "flex-start",
+                    flexDirection: "row",
+                    alignItems: "center",
+                    gap: 8,
+                  }}
+                >
+                  <Text>✅</Text>
+                  <Text style={{ fontWeight: 600, color: "#000000ff" }}>0</Text>
+                </View>
+                
+                <Text style={{fontSize:12, fontWeight: 600, color: "#25252594" }}>
+                  Total
+                </Text>
+              </View>
             </View>
           </View>
         )}
       />
     </View>
+     </>
   );
 };
 

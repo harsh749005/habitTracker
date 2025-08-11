@@ -41,7 +41,9 @@ const ProtectedLayout = () => {
         <Tabs.Screen
           name="Streak"
           options={{
-            title: "Your Streaks", // Header title
+            title: "Streaks", // Header title
+            headerTitleAlign:"center",
+            // headerShown:false,
             tabBarLabel: "Streak", // Tab bar name
             tabBarIcon: ({ color, size }) => (
               <Ionicons name="flame-outline" size={size} color={color} />

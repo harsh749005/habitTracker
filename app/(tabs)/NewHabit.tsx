@@ -3,8 +3,8 @@ import React from 'react'
 
 const NewHabit = () => {
   return (
-    <View>
-      <Text>NewHabit</Text>
+    <View style={{justifyContent:"center",alignItems:"center",flex:1}}>
+      <Text>Soon ...</Text>
     </View>
   )
 }

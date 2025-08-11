@@ -69,8 +69,9 @@ const Home = () => {
             <Text
               style={{
                 fontSize: 16,
-                fontWeight: "600",
+                fontWeight: "700",
                 color: Colors.textPrimary,
+
               }}
             >
               {item.title}
@@ -96,7 +97,7 @@ const Home = () => {
               >
                 <Text>{item.icon}</Text>
                 <Text style={{ fontWeight: 700, color: "#ffaa00ff" }}>
-                  {item.streak}
+                  {item.streak} day streak
                 </Text>
               </View>
               <View
